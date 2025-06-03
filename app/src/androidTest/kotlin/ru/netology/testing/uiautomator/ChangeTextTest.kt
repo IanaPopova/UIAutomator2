@@ -89,12 +89,9 @@ class ChangeTextTest {
         device.findObject(By.res(packageName, "userInput")).text = inputText
         device.findObject(By.res(packageName, "buttonActivity")).click()
 
-        device.wait(Until.hasObject(By.res(packageName, "textToBeChanged")), TIMEOUT)
+        device.wait(Until.hasObject(By.res(packageName, "text")), TIMEOUT)
 
-        val newActivityText = device.findObject(By.res(packageName, "textToBeChanged")).text
+        val newActivityText = device.findObject(By.res(packageName, "text")).text
         assertEquals(inputText, newActivityText)
     }
 }
-
-
-
